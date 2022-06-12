@@ -1,0 +1,16 @@
+https://linuxize.com/post/how-to-install-and-configure-samba-on-centos-7/
+yum install samba samba-client
+
+systemctl stop smb.service
+systemctl stop nmb.service
+systemctl start smb.service
+systemctl start nmb.service
+
+
+systemctl enable smb.service
+systemctl enable nmb.service
+
+vi /etc/samba/smb.conf
+
+sudo adduser zabbix
+sudo smbpasswd -a zabbix
